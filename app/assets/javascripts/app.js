@@ -5,7 +5,16 @@ app.controller('MainCtrl', ['$resource', '$scope', function($resource, $scope) {
   $scope.items = Items.query();
   $scope.cart = {
     items: [],
-    total: 0
+    total: 0,
+    totalItems: function() {
+      var x = 0;
+      $scope.items.forEach(function(e){
+        if (e.amountInCart > 0) {
+          x += e.amountInCart;
+        }
+      });
+      return x;
+    }
   };
 
   $scope.addToCart = function(item) {
@@ -16,6 +25,7 @@ app.controller('MainCtrl', ['$resource', '$scope', function($resource, $scope) {
       $scope.cart.total += item.price;
       if ($scope.cart.items.indexOf(item) > -1) {
         item.amountInCart++;
+        console.log($scope.cart.totalItems());
       } else {
         $scope.cart.items.push(item);
         item.amountInCart = 1;

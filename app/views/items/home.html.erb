@@ -23,7 +23,7 @@
         <p>{{item.name}} x{{item.amountInCart}} <button ng-click="removeFromCart(item)">Remove 1 of {{item.name}}</button></p>
       </div>
       <div>
-        <!-- <p>Number of items in cart: {{cart.items.length}}</p> -->
+        <p>Number of items in cart: {{cart.totalItems()}}</p>
         <p>Cart total: {{cart.total}}</p>
       </div>
     </div>
