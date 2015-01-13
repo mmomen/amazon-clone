@@ -19,11 +19,12 @@
     </div>
     <div>
       <h2>WUT U GOT IN YO CART:</h2>
-      <div ng-repeat="item in cart">
-        <p>{{item.name}} x{{item.amountInCart}}</p>
+      <div ng-repeat="item in cart.items">
+        <p>{{item.name}} x{{item.amountInCart}} <button ng-click="removeFromCart(item)">Remove 1 of {{item.name}}</button></p>
       </div>
       <div>
-        <p>Cart total: {{cartTotal}}</p>
+        <!-- <p>Number of items in cart: {{cart.items.length}}</p> -->
+        <p>Cart total: {{cart.total}}</p>
       </div>
     </div>
   </div>
