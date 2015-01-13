@@ -1,33 +1,18 @@
-var app = angular.module('AmazonApp', []);
+var app = angular.module('AmazonApp', ['ngResource']);
 
-app.controller('MainCtrl', ['$scope', function($scope) {
+app.controller('MainCtrl', ['$resource', '$scope', function($resource, $scope) {
+  var Items = $resource('/items/:id', {id: '@id'});
+  $scope.items = Items.query();
   $scope.cart = [];
-  $scope.items = [
-    {
-      id: 1,
-      name: "Angular Book",
-      description: "Favorite book about Angular",
-      price: 10,
-      quantity: 3,
-      url: "https://www.ng-book.com/images/flatbook-ngbook-small.png"
-    },
-    {
-      id: 2,
-      name: "Leather Jacket",
-      description: "Genuine leather. Not fake.",
-      price: 100,
-      quantity: 100,
-      url: "http://images.leatherup.com/images/product/large/XS-151-300-1.jpg"
-    }
-  ];
 
   $scope.addToCart = function(item) {
     if (item.quantity === 0) {
       item.quantity = "WE AIN'T GO NO MO GTFO";
+      // var idx = $scope.items.indexOf(item);
+      // $scope.items[idx].$delete();
     } else if (typeof item.quantity !== "string") {
       item.quantity--;
       $scope.cart.push(item.id);
     }
-    
   };
 }]);
