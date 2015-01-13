@@ -1,1 +1,21 @@
-<h1>Look at app/views/items/home.html.erb</h1>
+<style>
+  .image {
+    width: 35%;
+    height: auto;
+  }
+</style>
+
+<div ng-app="AmazonApp">
+  <div ng-controller="MainCtrl">
+    <div ng-repeat="item in items">
+      <h1>{{item.name}}</h1>
+      <img src="{{item.url}}" class="image">
+      <p>
+        {{item.description}}<br>
+        Price: ${{item.price}}<br>
+        Quantity: {{item.quantity}}<br>
+      </p>
+      <button ng-click="addToCart(item)">GIMMA DIZ ITEM!</button>
+    </div>
+  </div>
+</div>
