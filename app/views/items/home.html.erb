@@ -17,5 +17,14 @@
       </p>
       <button ng-click="addToCart(item)">GIMMA DIZ ITEM!</button>
     </div>
+    <div>
+      <h2>WUT U GOT IN YO CART:</h2>
+      <div ng-repeat="item in cart">
+        <p>{{item.name}} x{{item.amountInCart}}</p>
+      </div>
+      <div>
+        <p>Cart total: {{cartTotal}}</p>
+      </div>
+    </div>
   </div>
 </div>
