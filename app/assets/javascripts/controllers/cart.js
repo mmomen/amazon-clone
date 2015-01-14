@@ -1,3 +1,6 @@
-app.controller('CartCtrl', ['$resource', '$scope', 'Items', function($resource, $scope, Items) {
-  $scope.cart = {};
+app.controller('CartCtrl', ['$resource', '$scope', 'Items', 'Cart', function($resource, $scope, Items, Cart) {
+  $scope.cart = Cart;
+  $scope.removeFromCart = function(item) {
+    Cart.removeFromCart(item);
+  };
 }]);
