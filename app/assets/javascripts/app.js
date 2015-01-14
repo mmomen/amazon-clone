@@ -37,12 +37,10 @@ app.controller('MainCtrl', ['$resource', '$scope', function($resource, $scope) {
       item.quantity--;
       $scope.cart.total += item.price;
       if ($scope.cart.items.indexOf(item) > -1) {
-        // item.amountInCart++;
         $scope.cart.items[$scope.cart.items.indexOf(item)].amountInCart++; //this is absurd
-        // console.log($scope.cart.items[$scope.cart.items.indexOf(item)]);
       } else {
         item.amountInCart = 1;
-        $scope.cart.items.push(item); //amountincart is not updated correctly (clone instead of link)
+        $scope.cart.items.push(item); //there is an issue with accessing amountincart down the line
       }
     }
   };
