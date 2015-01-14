@@ -6,19 +6,19 @@
 </style>
 
 <div ng-app="AmazonApp">
-  <div ng-controller="MainCtrl">
-    <div>
-      <h2>WUT U GOT IN YO CART:</h2>
-      <div ng-repeat="item in cart.items">
-        <p>{{item.name}} x{{item.amountInCart}} <button ng-click="removeFromCart(item)">Remove 1 of {{item.name}}</button></p>
-      </div>
-      <div>
-        <p>Number of items in cart: {{cart.totalItems()}}</p>
-        <p>Cart total: ${{cart.total}}</p>
-        <input type="text" placeholder="Wuz yo name?" ng-model="name" />
-        <button ng-click="checkout(cart.total, name, cart.items)">wuuuz up u rdy to orda? click diz n imma chex u out</button>
-      </div>
+  <div ng-controller="CartCtrl">
+    <h2>WUT U GOT IN YO CART:</h2>
+    <div ng-repeat="item in cart.items">
+      <p>{{item.name}} x{{item.amountInCart}} <button ng-click="removeFromCart(item)">Remove 1 of {{item.name}}</button></p>
     </div>
+    <div>
+      <p>Number of items in cart: {{cart.totalItems()}}</p>
+      <p>Cart total: ${{cart.total}}</p>
+      <input type="text" placeholder="Wuz yo name?" ng-model="name" />
+      <button ng-click="checkout(cart.total, name, cart.items)">wuuuz up u rdy to orda? click diz n imma chex u out</button>
+    </div>
+  </div>
+  <div ng-controller="ItemsCtrl">
     <div ng-repeat="item in items">
       <h1>{{item.name}}</h1>
       <img src="{{item.url}}" class="image">
