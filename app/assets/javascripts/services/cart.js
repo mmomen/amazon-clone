@@ -2,7 +2,7 @@ app.factory('Cart', ['$resource', function($resource) {
   var addToCart = function(item) {
     item.quantity--; //reduce quantity
     if (item.quantity === 0) {
-      item.isDisabled = true; //disabled button if no items are left
+      item.isDisabled = true; //disabled button if no items are left - TODO: better to check cartQn instead of setting t\f
     }
 
     var index = this.items.indexOf(item); //grab index in cart
