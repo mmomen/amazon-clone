@@ -1,51 +1,39 @@
-<%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.0/css/foundation.min.css" %>
-
-<style>
-  .image {
-    width: auto;
-    height: 15em;
-  }
-
-  body {
-    background: transparent;
-    background-image: url('http://www.akcli-voh.org/wp-content/uploads/2013/10/background2.jpg');
-  }
-</style>
-
-<div ng-app="AmazonApp">
-  <!-- side bar -->
-  <div ng-controller="CartCtrl">
-    <div class="large-4 small-12 columns">
-      <h1>HOW STRONG YO CART GAME?</h1>
-      <div>
-        <p>Number of items in cart: {{cart.totalItems}}</p>
-        <p>Cart total: ${{cart.totalPrice}}</p>
-        <input type="text" placeholder="Maeby Fünke" ng-model="person.name" />
-        <button ng-click="checkout(cart.totalPrice, person.name, cart.items)" class="button small round">wuuuz up u rdy to orda? click diz n imma chex u out</button>
-      </div>
-      <div class="row">
-        <div ng-repeat="item in cart.items" class="col-md-2">
-          <p>{{item.name}} x{{item.cartQn}} <button ng-click="removeFromCart(item)" class="button tiny alert round">Drop 1</button></p>
+<div class="tae">
+  <div ng-app="AmazonApp" class="maindiv">
+    <!-- side bar -->
+    <div ng-controller="CartCtrl">
+      <div class="large-4 small-12 columns bob">
+        <h1>HOW STRONG YO CART GAME?</h1>
+        <div>
+          <p>Number of items in cart: {{cart.totalItems}}</p>
+          <p>Cart total: ${{cart.totalPrice}}</p>
+          <input type="text" placeholder="Maeby Fünke" ng-model="person.name" />
+          <button ng-click="checkout(cart.totalPrice, person.name, cart.items)" class="button small round">wuuuz up u rdy to orda? click diz n imma chex u out</button>
+        </div>
+        <div class="row">
+          <div ng-repeat="item in cart.items" class="col-md-2">
+            <p>{{item.name}} x{{item.cartQn}} <button ng-click="removeFromCart(item)" class="button tiny alert round">Drop 1</button></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-<!-- main  -->
+  <!-- main  -->
 
-  <div ng-controller="ItemsCtrl" class="large-8 columns">
-    <div class="row">
-      <div ng-repeat="item in items">
-        <div class="large-3 small-5 columns">
-          <h3>{{item.name}}</h3>
-          <img src="{{item.url}}" class="image">
-          <div class="panel">
-            <p>
-              {{item.description}}<br>
-              Price: ${{item.price}}<br>
-              Quantity: {{item.quantity}}<br>
-            </p>
-            <button ng-click="addToCart(item)" ng-disabled="item.isDisabled" class="button small success round">GIMMA DIZ ITEM!</button>
+    <div ng-controller="ItemsCtrl" class="large-8 columns">
+      <div class="row">
+        <div ng-repeat="item in items">
+          <div class="large-3 small-5 columns">
+            <h3>{{item.name}}</h3>
+            <p text-align="center"><img src="{{item.url}}" class="image"></p>
+            <div class="panel">
+              <p class="text">
+                {{item.description}}<br>
+                Price: ${{item.price}}<br>
+                Quantity: {{item.quantity}}<br>
+              </p>
+              <button ng-click="addToCart(item)" ng-disabled="item.isDisabled" class="button small success round">GIMMA DIZ ITEM!</button>
+            </div>
           </div>
         </div>
       </div>
