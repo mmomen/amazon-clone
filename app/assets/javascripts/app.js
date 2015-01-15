@@ -7,7 +7,7 @@ app.config(function($routeProvider) {
       controller: "ItemsCtrl"
     })
     .when("/cart", {
-      templateUrl: "/templates/cart.html",
+      templateUrl: "/assets/templates/cart.html",
       controller: "CartCtrl"
     })
     .otherwise({
