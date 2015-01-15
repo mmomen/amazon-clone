@@ -1,1 +1,1 @@
-var app = angular.module('AmazonApp', ['ngResource']);
+var app = angular.module('AmazonApp', ['ngResource', 'ngRoute']);
