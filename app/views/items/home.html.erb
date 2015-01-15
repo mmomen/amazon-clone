@@ -14,8 +14,8 @@
     <div>
       <p>Number of items in cart: {{cart.totalItems}}</p>
       <p>Cart total: ${{cart.totalPrice}}</p>
-      <input type="text" placeholder="Wuz yo name?" ng-model="name" />
-      <button ng-click="checkout(cart.total, name, cart.items)">wuuuz up u rdy to orda? click diz n imma chex u out</button>
+      <input type="text" placeholder="Wuz yo name?" ng-model="person.name" />
+      <button ng-click="checkout(cart.totalPrice, person.name, cart.items)">wuuuz up u rdy to orda? click diz n imma chex u out</button>
     </div>
   </div>
   <div ng-controller="ItemsCtrl">

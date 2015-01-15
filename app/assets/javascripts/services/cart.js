@@ -29,11 +29,18 @@ app.factory('Cart', ['$resource', function($resource) {
     }
   };
 
+  var resetCart = function() {
+    this.items = [];
+    this.totalPrice = 0;
+    this.totalItems = 0;
+  };
+
   return {
     items: [],
     totalPrice: 0,
     totalItems: 0,
     addToCart: addToCart,
-    removeFromCart: removeFromCart
+    removeFromCart: removeFromCart,
+    resetCart: resetCart
   };
 }]);
