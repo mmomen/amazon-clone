@@ -1,0 +1,16 @@
+<div>
+  <div class="large-4 small-12 columns">
+    <h1>HOW STRONG YO CART GAME?</h1>
+    <div>
+      <p>Number of items in cart: {{cart.totalItems}}</p>
+      <p>Cart total: ${{cart.totalPrice}}</p>
+      <input type="text" placeholder="Maeby Fünke" ng-model="person.name" />
+      <button ng-click="checkout(cart.totalPrice, person.name, cart.items)" class="button small round">wuuuz up u rdy to orda? click diz n imma chex u out</button>
+    </div>
+    <div class="row">
+      <div ng-repeat="item in cart.items" class="col-md-2">
+        <p>{{item.name}} x{{item.cartQn}} <button ng-click="removeFromCart(item)" class="button tiny alert round">Drop 1</button></p>
+      </div>
+    </div>
+  </div>
+</div>
