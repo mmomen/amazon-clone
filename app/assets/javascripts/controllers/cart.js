@@ -6,22 +6,28 @@ app.controller('CartCtrl', ['$resource', '$scope', 'Items', 'Cart', 'Orders', fu
   };
 
   $scope.checkout = function(totalPrice, name, cartItems) {
-    var order = {
-      person: name,
-      cost: totalPrice
-    };
 
-    var newOrder = new Orders(order);
-    newOrder.$save(); //posts new order object
+    if (cartItems.length === 0) {
+      alert("wuz u doin? u tryin to chexout but u aint bought notin!1!");
+    } else {
+      var order = {
+        person: name,
+        cost: totalPrice
+      };
 
-    cartItems.forEach(function(item) {
-      Items.get({id: item.id}, function(sourceItem) {
-        sourceItem.quantity = item.quantity;
-        sourceItem.$update(); //update backend with new quantity after checkout
+      var newOrder = new Orders(order);
+      newOrder.$save(); //posts new order object
+
+      cartItems.forEach(function(item) {
+        Items.get({id: item.id}, function(sourceItem) {
+          sourceItem.quantity = item.quantity;
+          sourceItem.$update(); //update backend with new quantity after checkout
+        });
       });
-    });
 
-    Cart.resetCart();
-    $scope.person.name = "";
+      Cart.resetCart();
+      $scope.person.name = "";
+    }
+    
   };
 }]);
