@@ -5,6 +5,7 @@ app.controller('CartCtrl', ['$resource', '$scope', 'Items', 'Cart', 'Orders', fu
     Cart.removeFromCart(item);
   };
 
+  // Move this functionality to cart serice
   $scope.checkout = function(totalPrice, name, cartItems) {
 
     if (cartItems.length === 0) {
@@ -28,6 +29,6 @@ app.controller('CartCtrl', ['$resource', '$scope', 'Items', 'Cart', 'Orders', fu
       Cart.resetCart();
       $scope.person.name = "";
     }
-    
+
   };
 }]);
