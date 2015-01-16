@@ -10,6 +10,10 @@ app.config(function($routeProvider) {
       templateUrl: "<%= asset_path('templates/cart.html') %>",
       controller: "CartCtrl"
     })
+    .when("/orders", {
+      templateUrl: "<%= asset_path('templates/orders.html') %>",
+      controller: "ViewOrdersCtrl"
+    })
     .otherwise({
       redirectTo: "/"
     });
