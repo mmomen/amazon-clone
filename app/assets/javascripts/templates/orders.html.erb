@@ -1,6 +1,6 @@
 <div class="row">
   <div ng-repeat="order in orders">
-    <div class="medium-6 large-3 columns panel">
+    <div class="medium-6 large-3 columns panel panelorder">
       <p>
         Name: <b>{{order.person.charAt(0).toUpperCase() + order.person.slice(1) || "***N/A***"}}</b><br>
         Order #: {{order.id}}<br>
