@@ -2,12 +2,18 @@
 
   <h2>HOW STRONG YO CART GAME?</h2>
   <div>
-    <p>Number of items in cart: {{cart.totalItems}}</p>
-    <p>Cart total: ${{cart.totalPrice}}</p>
+    <p>
+      <b>
+        Number of items in cart: {{cart.totalItems}}<br>
+        Cart total: ${{cart.totalPrice}}
+      </b>
+    </p>
     <div class="row">
       <form name="myForm" novalidate>
-        <input type="text" placeholder="Maeby Fünke" ng-model="person.name" name="nameBox" required />
-        <button ng-click="checkout(cart.totalPrice, person.name, cart.items)" class="button small round" ng-disabled="myForm.nameBox.$invalid">wuuuz up u rdy to orda? click diz n imma chex u out</button>
+        <div class="small-6 small-centered columns">
+          <input type="text" placeholder="Maeby Fünke" ng-model="person.name" name="nameBox" ng-maxlength="20" required />
+        </div>
+        <button ng-click="checkout(cart.totalPrice, person.name, cart.items)" class="button small round secondary" ng-disabled="myForm.nameBox.$invalid">wuuuz up u rdy to orda? click diz n imma chex u out</button>
       </form>
     </div>
   </div>
