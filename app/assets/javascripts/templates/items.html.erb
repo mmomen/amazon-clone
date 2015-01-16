@@ -10,7 +10,7 @@
             Price: ${{item.price}}<br>
             Quantity: {{item.quantity}}<br>
           </p>
-          <button ng-click="addToCart(item)" ng-disabled="item.isDisabled" class="button small success round">GIMMA DIZ ITEM!</button>
+          <button ng-click="addToCart(item)" ng-disabled="item.isDisabled || item.quantity === 0" class="button small success round">GIMMA DIZ ITEM!</button>
         </div>
       </div>
     </div>
