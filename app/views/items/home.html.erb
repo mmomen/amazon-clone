@@ -1,33 +1,4 @@
-<style>
-  .image {
-    width: 25%;
-    height: auto;
-  }
-</style>
-
 <div ng-app="AmazonApp">
-  <div ng-controller="CartCtrl">
-    <h2>WUT U GOT IN YO CART:</h2>
-    <div ng-repeat="item in cart.items">
-      <p>{{item.name}} x{{item.cartQn}} <button ng-click="removeFromCart(item)">Drop 1 of {{item.name}}</button></p>
-    </div>
-    <div>
-      <p>Number of items in cart: {{cart.totalItems}}</p>
-      <p>Cart total: ${{cart.totalPrice}}</p>
-      <input type="text" placeholder="Wuz yo name?" ng-model="person.name" />
-      <button ng-click="checkout(cart.totalPrice, person.name, cart.items)">wuuuz up u rdy to orda? click diz n imma chex u out</button>
-    </div>
-  </div>
-  <div ng-controller="ItemsCtrl">
-    <div ng-repeat="item in items">
-      <h1>{{item.name}}</h1>
-      <img src="{{item.url}}" class="image">
-      <p>
-        {{item.description}}<br>
-        Price: ${{item.price}}<br>
-        Quantity: {{item.quantity}}<br>
-      </p>
-      <button ng-click="addToCart(item)" ng-disabled="item.isDisabled">GIMMA DIZ ITEM!</button>
-    </div>
-  </div>
+  <div ng-include="'<%= asset_path('templates/navbar.html') %>'"></div>
+  <ng-view>
 </div>

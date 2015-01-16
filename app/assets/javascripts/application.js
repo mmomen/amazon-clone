@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require angular
 //= require angular-resource
+//= require angular-route
 //= require app
 //= require_tree ./services
 //= require_tree ./controllers

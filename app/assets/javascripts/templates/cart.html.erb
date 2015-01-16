@@ -1,0 +1,26 @@
+<div>
+
+  <h1 class="centerthis">HOW STRONG YO CART GAME?</h1>
+  <div class="centerthis">
+    <p>Number of items in cart: {{cart.totalItems}}</p>
+    <p>Cart total: ${{cart.totalPrice}}</p>
+    <div class="row">
+      <form name="myForm" novalidate>
+        <input type="text" placeholder="Maeby Fünke" ng-model="person.name" name="nameBox" required />
+        <button ng-click="checkout(cart.totalPrice, person.name, cart.items)" class="button small round" ng-disabled="myForm.nameBox.$invalid">wuuuz up u rdy to orda? click diz n imma chex u out</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div ng-repeat="item in cart.items">
+      <div class="small-3 columns">
+        <p>
+          {{item.name}} x{{item.cartQn}}<br>
+          <button ng-click="removeFromCart(item)" class="button tiny alert round" >Drop 1</button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
