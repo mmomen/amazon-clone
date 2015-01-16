@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Amazon</title>
+  <title>The Ghetto Market</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<div ng-app="AmazonApp">
+  <div ng-include="' <%= asset_path('templates/navbar.html') %>'"></div>
+  <center><img ng-src="assets/logo.png" class="logo"></center>
+  <ng-view>
+</div>
 <%= yield %>
 
 </body>
