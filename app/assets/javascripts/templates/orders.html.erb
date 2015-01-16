@@ -1,11 +1,11 @@
 <div class="row">
   <div ng-repeat="order in orders">
-    <div class="large-3 small-4 columns panel">
+    <div class="medium-6 large-3 columns panel">
       <p>
-        Name on Order: <b>{{order.person.charAt(0).toUpperCase() + order.person.slice(1) || "***N/A***"}}</b><br>
+        Name: <b>{{order.person.charAt(0).toUpperCase() + order.person.slice(1) || "***N/A***"}}</b><br>
         Order #: {{order.id}}<br>
         Order $: {{order.cost}}<br>
-        Order Date: {{order.created_at.slice(0,10)}}
+        Date: {{order.created_at.slice(0,10)}}
       </p>
     </div>
   </div>
